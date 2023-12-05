@@ -77,21 +77,16 @@ public class MainActivity extends AppCompatActivity {
     public void retrieveData() {
         DatabaseHelper db = new DatabaseHelper(this);
         pointModelArrayList = db.getAllPoints();
-
-//        for (PointModel point : pointModelArrayList) {
-//            Log.d("valerie", point.getId() + " | " + point.getX() + " | " + point.getY());
-//        }
-
     }
 
     public void callView() {
         int x = Integer.parseInt(Objects.requireNonNull(xInput.getText()).toString());
         int y = Integer.parseInt(Objects.requireNonNull(yInput.getText()).toString());
         int sd = Integer.parseInt(Objects.requireNonNull(sideLengthInput.getText()).toString());
-
 //        for (PointModel point : pointModelArrayList) {
 //            Log.d("valerie", point.getId() + " | " + point.getX() + " | " + point.getY());
 //        }
+
         //initializing our view
         MaskableFrameLayout maskableFrameLayout = findViewById(R.id.frameLayout);
 
@@ -109,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
         if (areFieldsFilled()) {
             callView();
             Toast.makeText(this, "Selection complete", Toast.LENGTH_SHORT).show();
-//            xInput.setText("");yInput.setText("");sideLengthInput.setText("");
         } else {
             Toast.makeText(this, "Please complete all fields", Toast.LENGTH_SHORT).show();
         }
